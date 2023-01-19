@@ -11,6 +11,16 @@
 
     <artifactId>trans-cloud</artifactId>
     <packaging>pom</packaging>
+    <modules>
+        <module>trans-system-server</module>
+        <module>trans-user-server</module>
+        <module>trans-meta-server</module>
+        <module>trans-etl-server</module>
+        <module>trans-schedule-server</module>
+        <module>trans-query-server</module>
+        <module>trans-monitor-server</module>
+        <module>trans-ods-server</module>
+    </modules>
 
 
 </project>
