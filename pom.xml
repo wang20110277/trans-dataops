@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.trans</groupId>
+    <artifactId>trans-dataops</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>trans-auth</module>
+        <module>trans-base</module>
+        <module>trans-common</module>
+        <module>trans-gateway</module>
+        <module>trans-cloud</module>
+        <module>trans-plugins</module>
+    </modules>
+    <!-- 一般来说父级项目的packaging都为pom，packaging默认类型jar类型-->
+    <packaging>pom</packaging>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.3.2.RELEASE</version>
+    </parent>
+
+    <properties>
+        <java.version>1.8</java.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <springboot.version>2.3.2.RELEASE</springboot.version>
+        <springcloud.version>Hoxton.SR8</springcloud.version>
+        <alibaba.cloud.version>2.2.5.RELEASE</alibaba.cloud.version>
+        <activiti-dependencies.version>7.1.99</activiti-dependencies.version>
+        <oauth2.version>2.2.5.RELEASE</oauth2.version>
+        <mybatis.plus.version>3.4.3</mybatis.plus.version>
+        <dynamic.datasource.version>3.4.1</dynamic.datasource.version>
+        <druid.version>1.2.8</druid.version>
+        <lombok.version>1.18.2</lombok.version>
+        <hutool.version>5.8.10</hutool.version>
+        <knife4j.version>2.0.2</knife4j.version>
+        <skywalking.version>8.7.0</skywalking.version>
+        <trans.base.version>1.0-SNAPSHOT</trans.base.version>
+        <trans.common.version>1.0-SNAPSHOT</trans.common.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${springboot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${springcloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${alibaba.cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.activiti.dependencies</groupId>
+                <artifactId>activiti-dependencies</artifactId>
+                <version>${activiti-dependencies.version}</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+            <!--lombok -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.github.xiaoymin</groupId>
+                <artifactId>knife4j-spring-boot-starter</artifactId>
+                <version>${knife4j.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis.plus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>dynamic-datasource-spring-boot-starter</artifactId>
+                <version>${dynamic.datasource.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.skywalking</groupId>
+                <artifactId>apm-toolkit-logback-1.x</artifactId>
+                <version>${skywalking.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.skywalking</groupId>
+                <artifactId>apm-toolkit-trace</artifactId>
+                <version>${skywalking.version}</version>
+            </dependency>
+            <!--trans-->
+            <dependency>
+                <groupId>com.trans</groupId>
+                <artifactId>trans-base</artifactId>
+                <version>${trans.base.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.trans</groupId>
+                <artifactId>trans-common</artifactId>
+                <version>${trans.common.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    <repositories>
+        <repository>
+            <id>aliyun</id>
+            <url>https://maven.aliyun.com/repository/public</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>alfresco</id>
+            <name>Activiti Releases</name>
+            <url>https://artifacts.alfresco.com/nexus/content/repositories/activiti-releases/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </repository>
+    </repositories>
+</project>
