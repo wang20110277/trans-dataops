@@ -13,7 +13,6 @@
     <packaging>pom</packaging>
     <modules>
         <module>trans-system-server</module>
-        <module>trans-user-server</module>
         <module>trans-meta-server</module>
         <module>trans-etl-server</module>
         <module>trans-schedule-server</module>
